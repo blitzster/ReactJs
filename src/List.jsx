@@ -12,9 +12,15 @@ function List() {
     // fruits.sort((a, b) => a.name.localeCompare(b.name)); //ALPHABETICAL
     // fruits.sort((a, b) => b.name.localeCompare(a.name)); //Reverse sort
     // fruits.sort((a, b) => a.calories - b.calories); //Numeric
-    fruits.sort((a, b) => b.calories - a.calories); //Reverse Numeric
+    // fruits.sort((a, b) => b.calories - a.calories); //Reverse Numeric
 
-    const listItems = fruits.map(fruit => <li key={fruit.id}>{fruit.name}: &nbsp;<b>{fruit.calories}</b></li>);  //<li key={fruit.name}> removes the warning in the web page.
+    // const lowCalFruits = fruits.filter(fruit => fruit.calories < 100);
+
+    // const highCalFruits = fruits.filter(fruit => fruit.calories > 100);
+    // const listItems = lowCalFruits.map(lowCalFruit => <li key={lowCalFruit.id}>{lowCalFruit.name}: &nbsp; <b>{lowCalFruit.calories}</b></li>);
+    // const listItems = highCalFruits.map(highCalFruit => <li key={highCalFruit.id}>{highCalFruit.name}: &nbsp; <b>{highCalFruit.calories}</b></li>)
+    const listItems = fruits.map(Fruit => <li key={Fruit.id}>{Fruit.name}: &nbsp; <b>{Fruit.calories}</b></li>)
+    // const listItems = fruits.map(fruit => <li key={fruit.id}>{fruit.name}: &nbsp;<b>{fruit.calories}</b></li>);  //<li key={fruit.name}> removes the warning in the web page.
     return (<ol>{listItems}</ol>);
 }
 export default List
